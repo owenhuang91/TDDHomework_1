@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDHomeworkTest", "TDDHomeworkTest\TDDHomeworkTest.csproj", "{8929FF48-6DB1-4C23-8C1A-49347C1B465E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDHomeworkProduction", "TDDHomeworkProduction\TDDHomeworkProduction.csproj", "{89AD0368-5F0E-4C4F-A903-7DD72876EBE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8929FF48-6DB1-4C23-8C1A-49347C1B465E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8929FF48-6DB1-4C23-8C1A-49347C1B465E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8929FF48-6DB1-4C23-8C1A-49347C1B465E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8929FF48-6DB1-4C23-8C1A-49347C1B465E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89AD0368-5F0E-4C4F-A903-7DD72876EBE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89AD0368-5F0E-4C4F-A903-7DD72876EBE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89AD0368-5F0E-4C4F-A903-7DD72876EBE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89AD0368-5F0E-4C4F-A903-7DD72876EBE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
