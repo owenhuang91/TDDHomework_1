@@ -45,7 +45,7 @@ namespace TDDHomeworkTest
         }
 
         [TestMethod]
-        public void GetOrderSumByPropertyAndCount_count_is_0_should_return_0()
+        public void GetOrderSumByPropertyAndCount_count_is_0_should_throw_ArgumentException()
         {
             //arrange
             var orderDataAccessStub = Substitute.For<IOrderDataAccess>();
@@ -54,11 +54,10 @@ namespace TDDHomeworkTest
             var target = new Program(orderDataAccessStub);
 
             //act
-            var actual = target.GetOrderSumByPropertyAndCount(0, "Revenue");
+            Action act = () => target.GetOrderSumByPropertyAndCount(0, "Revenue");
 
             //assert
-            var expected = new List<int>() { 0 };
-            CollectionAssert.AreEqual(expected, actual);
+            act.ShouldThrow<ArgumentException>();
         }
         #endregion
 

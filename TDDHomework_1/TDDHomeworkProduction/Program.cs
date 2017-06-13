@@ -16,7 +16,7 @@ namespace TDDHomeworkProduction
         }
         public Program()
         {
-            this.orderDataAccess = new OrderDataAccess();
+            orderDataAccess = new OrderDataAccess();
         }
         static void Main(string[] args)
         {
@@ -39,12 +39,7 @@ namespace TDDHomeworkProduction
             }
             catch (ArgumentException ex)
             {
-                throw ex;
-            }
-
-            if (count == 0)
-            {
-                return new List<int>() { 0 };
+                throw;
             }
 
             var orderData = orderDataAccess.GetOrderData();
@@ -59,8 +54,7 @@ namespace TDDHomeworkProduction
 
         private void Validate(int count, string property)
         {
-
-            if (count < 0)
+            if (count <= 0)
             {
                 throw new ArgumentException();
             }
@@ -76,8 +70,6 @@ namespace TDDHomeworkProduction
                 throw new ArgumentException();
             }
         }
-
-
     }
 
     public class OrderDataAccess : IOrderDataAccess
