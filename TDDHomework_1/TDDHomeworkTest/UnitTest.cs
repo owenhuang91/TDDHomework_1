@@ -39,7 +39,7 @@ namespace TDDHomeworkTest
             //act
             var actual = target.GetOrderSumByPropertyAndCount(4, "Revenue");
 
-            //assert
+            //assert 
             var expected = new List<int>() { 50, 66, 60 };
             CollectionAssert.AreEqual(expected, actual);
         }
