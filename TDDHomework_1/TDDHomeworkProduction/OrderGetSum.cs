@@ -31,7 +31,7 @@ namespace TDDHomeworkProduction {
 
             int maxPage = source.Count() / pageSize + 1;
             for (int i = 0; i < maxPage; i++) {
-                yield return source.Skip(i * pageSize).Take(pageSize).Sum(selector);
+                yield return source.Skip(i * pageSize).Take(pageSize).SumForTest(selector);
             }
         }
 
@@ -41,6 +41,14 @@ namespace TDDHomeworkProduction {
                     yield return item;
                 }
             }
+        }
+
+        public static int SumForTest<T>(this IEnumerable<T> source, Func<T, int> selector) {
+            int i = 0;
+            foreach (var item in source) {
+                i+=selector.Invoke(item);
+            }
+            return i;
         }
 
     }
