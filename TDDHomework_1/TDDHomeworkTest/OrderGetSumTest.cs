@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TDDHomeworkProduction;
-using NSubstitute;
-using FluentAssertions;
-using System.Linq;
 
 namespace TDDHomeworkTest {
     [TestClass]
@@ -13,22 +12,23 @@ namespace TDDHomeworkTest {
         [TestMethod]
         public void GetOrderSumByPropertyAndCount_count_is_3_property_is_Cost_return_6_15_24_21() {
             //arrange
-            var target = new OrderGetSum();
+            var order = CreateTestData();
 
             //act
-            var actual = target.GetOrderSumByPropertyAndCount(3, CreateTestData(), m => m.Cost).ToList();
-            
+            var actual = order.GetOrderSumByPropertyAndCount(3, m => m.Cost).ToList();
+
             //assert
             var expected = new List<int>() { 6, 15, 24, 21 };
-            CollectionAssert.AreEqual(expected, actual.ToList());
+            CollectionAssert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void GetOrderSumByPropertyAndCount_count_is_4_property_is_Revenue_return_50_66_60() {
             //arrange
-            var target = new OrderGetSum();
+            var order = CreateTestData();
+
             //act
-            var actual = target.GetOrderSumByPropertyAndCount(4, CreateTestData(), m => m.Revenue).ToList();
+            var actual = order.GetOrderSumByPropertyAndCount(4, m => m.Revenue).ToList();
 
             //assert 
             var expected = new List<int>() { 50, 66, 60 };
@@ -38,22 +38,22 @@ namespace TDDHomeworkTest {
         [TestMethod]
         public void GetOrderSumByPropertyAndCount_count_is_0_should_throw_ArgumentException() {
             //arrange
-            var target = new OrderGetSum();
+            var order = CreateTestData();
 
             ///Act
-            Action act = () => target.GetOrderSumByPropertyAndCount(0, CreateTestData(), (item) => item.Cost).ToList();
+            Action act = () => order.GetOrderSumByPropertyAndCount(0, m => m.Cost).ToList();
+
             ///Assert
             act.ShouldThrow<ArgumentException>();
         }
 
-
         [TestMethod]
         public void GetOrderSumByPropertyAndCount_count_is_inus_should_throw_ArgumentException() {
             //arrange
-            var target = new OrderGetSum();
+            var order = CreateTestData();
 
             ///Act
-            Action act = () => target.GetOrderSumByPropertyAndCount(-3, CreateTestData(), (item) => item.Cost).ToList();
+            Action act = () => order.GetOrderSumByPropertyAndCount(-3, m => m.Cost).ToList();
             ///Assert
             act.ShouldThrow<ArgumentException>();
         }
